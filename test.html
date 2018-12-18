@@ -16,13 +16,19 @@
             @font-face
             {
                 font-family: 'logo';
-                src: url("logo.otf");
+                src: url("fonts/logo.otf");
             }
             
             @font-face
             {
-                font-family: 'Optician Sans';
-                src: url("Optician-Sans.otf");
+                font-family: 'hero';
+                src: url("fonts/Optician-Sans.otf");
+            }
+            
+            @font-face
+            {
+                font-family: 'body';
+                src: url("fonts/SelfModern.ttf");
             }
             
             html, body
@@ -48,8 +54,6 @@
                 opacity: 0.85;
                 letter-spacing: 0.07rem;
             }
-                
-            @media screen and (max-width:500px){html{font-size:1rem;padding-top:80px;}iframe{display:none;}a{display:block;}}
             
             header
             {
@@ -88,7 +92,7 @@
             
             a.nav
             {
-                font-family: "Self Modern";
+                font-family: "body";
                 font-weight: 100;
                 opacity: 0.7;
                 color: #fff;
@@ -121,6 +125,9 @@
                 opacity: 1;
                 width: 100%;
             }
+            
+            @keyframes fadein{0% {opacity: 0;}20% {opacity: 0;}100% {opacity: 1;}}
+            @media screen and (max-width:500px){html{font-size:1rem;padding-top:80px;}iframe{display:none;}a{display:block;}}
 		</style>
 
 		<!--<link rel="stylesheet" type="text/css" href="./kt-style.css" />-->
@@ -129,7 +136,7 @@
 
 	<body>
 
-		<iframe style="-webkit-filter: grayscale(100%) brightness(50%); pointer-events: none; top:-70px; left:-50px; position: fixed; z-index: -99; width: 1550px; height: calc(100% + 220px);" width="100%" height="100%" src="https://www.youtube.com/embed/ZFBoN7yIMZw?start=19&autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+		<iframe style="-webkit-filter: grayscale(100%) brightness(50%); pointer-events: none; top:-70px; left:-50px; position: fixed; z-index: -99; width: 1550px; height: calc(100% + 220px);animation-name: fadein;animation-duration: 5s;animation-timing-function: ease-in;" width="100%" height="100%" src="https://www.youtube.com/embed/ZFBoN7yIMZw?start=19&autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
 		
 		<header class="scroll">
             <a class="nav" href="index.html">Who We Are</a>
@@ -142,7 +149,7 @@
             <a class="nav" href="index.html">Contact</a>
 		</header>
 
-        <div style="margin:170px 250px; font-family: 'Optician Sans', monospace; text-transform: uppercase; font-weight: 500; font-size: 3rem; opacity: 0.8;">
+        <div style="margin:170px 250px; font-family: 'hero', monospace; text-transform: uppercase; font-weight: 500; font-size: 3rem; opacity: 0.8;">
             <div id="typed-strings">
                 <p>Continual growth means adapting</p>
                 <p>Continual growth means improving</p>
