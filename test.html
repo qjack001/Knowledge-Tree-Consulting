@@ -43,38 +43,36 @@
                 background-color: #000;
                 font-family: sans-serif;
                 text-align: center;
-                padding-top: 100px; 
-            }
-            h1
-            {
-                text-transform: lowercase;
-                font-size: 0.8rem;
-                font-weight: 100;
-                line-height: 1rem;
-                opacity: 0.85;
-                letter-spacing: 0.07rem;
+                padding-top: 100px;
+                font-family: "body";
             }
             
             header
             {
                 display: grid;
+/*                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;*/
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 grid-template-rows: auto;
                 
                 width: calc(100% - 100px);
                 position: fixed;
-                padding: 15px 0px;
-                margin: 0 50px;
+                padding: 15px 50px;
+                margin: 0;
                 top: 0px;
                 text-align: center;
                 z-index: 1000;
             }
             
+            .scroll
+            {
+                background-color: #000;
+            }
+            
             .logo
             {
                 cursor: pointer; 
-                font-family: 'logo'; 
-                font-size: 0.5rem;
+                font-family: 'logo', sans-serif;
+                color: #fff;
                 width: 180px;
                 text-align: center;
                 padding: 0;
@@ -83,6 +81,11 @@
                 height: 80px;
                 transition: all 0.4s linear;
                 overflow: hidden;
+                text-transform: lowercase;
+                font-size: 0.3rem;
+                font-weight: 100;
+                line-height: 1rem;
+                letter-spacing: 0.07rem;
             }
             
             .logo:hover
@@ -92,7 +95,7 @@
             
             a.nav
             {
-                font-family: "body";
+                font-family: "body", serif;
                 font-weight: 100;
                 opacity: 0.7;
                 color: #fff;
@@ -126,6 +129,21 @@
                 width: 100%;
             }
             
+            #hero-text
+            {
+                margin: 170px 250px;
+                font-family: 'hero', sans-serif;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 3rem;
+                opacity: 0.8;
+            }
+            
+            #typed
+            {
+                font-size: 5rem;
+            }
+            
             @keyframes fadein{0% {opacity: 0;}20% {opacity: 0;}100% {opacity: 1;}}
             @media screen and (max-width:500px){html{font-size:1rem;padding-top:80px;}iframe{display:none;}a{display:block;}}
 		</style>
@@ -138,24 +156,26 @@
 
 		<iframe style="-webkit-filter: grayscale(100%) brightness(50%); pointer-events: none; top:-70px; left:-50px; position: fixed; z-index: -99; width: 1550px; height: calc(100% + 220px);animation-name: fadein;animation-duration: 5s;animation-timing-function: ease-in;" width="100%" height="100%" src="https://www.youtube.com/embed/ZFBoN7yIMZw?start=19&autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
 		
-		<header class="scroll">
+		<header class="sgcroll">
             <a class="nav" href="index.html">Who We Are</a>
             <a class="nav" href="index.html">The Process</a>
+<!--            <a class="nav" href="index.html">The Tools</a>-->
 		    <div class="logo">
                 <img src="KnowledgeTree.png" style="width: 50px;">
-                <h1 style="">Knowledge Tree<br>Consulting</h1>
+                <h1 style="opacity: 0.85">Knowledge Tree<br>Consulting</h1>
 		    </div>
-		    <a class="nav" href="index.html">Members</a>
+		    <a class="nav" href="index.html">Blog</a>
+<!--		    <a class="nav" href="index.html">Members</a>-->
             <a class="nav" href="index.html">Contact</a>
 		</header>
 
-        <div style="margin:170px 250px; font-family: 'hero', monospace; text-transform: uppercase; font-weight: 500; font-size: 3rem; opacity: 0.8;">
+        <div id="hero-text">
             <div id="typed-strings">
                 <p>Continual growth means adapting</p>
                 <p>Continual growth means improving</p>
                 <p>Continual growth means never fearing change</p>
             </div>
-            <span id="typed" style="font-size: 5rem;"></span>
+            <span id="typed"></span>
         </div>
         
         <script>
@@ -167,9 +187,24 @@
                 fadeOut: false,
                 backSpeed: 40,
                 backDelay: 1000,
-                showCursor: false
+                showCursor: false,
+                
             });
         </script>
+        
+        <div style="font-family:'body'; width:100%; position: absolute; bottom: 20px; opacity: 0.6;">
+            <svg class="arrows" style="width: 60px; height: 20px; transform: scale(0.6);">
+                <path class="a1" d="M0 0 L30 18 L60 0" style="stroke: #fff; fill: transparent; stroke-width: 2px; "></path>
+            </svg>
+        </div>
+        
+        
+<!--
+        <div style="margin-top:350px; width:100%; background-color: #000;padding: 50px 0px;">
+            <h2>Who We Are</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+-->
 
 
 	</body>
