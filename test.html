@@ -11,144 +11,7 @@
 		<meta name="theme-color" content="#000000" />
 		
 		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-
-		<style>
-            @font-face
-            {
-                font-family: 'logo';
-                src: url("fonts/logo.otf");
-            }
-            
-            @font-face
-            {
-                font-family: 'hero';
-                src: url("fonts/Optician-Sans.otf");
-            }
-            
-            @font-face
-            {
-                font-family: 'body';
-                src: url("fonts/SelfModern.ttf");
-            }
-            
-            html, body
-            {
-                margin: 0;
-                padding: 0;
-            }
-            
-            html
-            {
-                color: #fff;
-                background-color: #000;
-                font-family: sans-serif;
-                text-align: center;
-                padding-top: 100px;
-                font-family: "body";
-            }
-            
-            header
-            {
-                display: grid;
-/*                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;*/
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                grid-template-rows: auto;
-                
-                width: calc(100% - 100px);
-                position: fixed;
-                padding: 15px 50px;
-                margin: 0;
-                top: 0px;
-                text-align: center;
-                z-index: 1000;
-            }
-            
-            .scroll
-            {
-                background-color: #000;
-            }
-            
-            .logo
-            {
-                cursor: pointer; 
-                font-family: 'logo', sans-serif;
-                color: #fff;
-                width: 180px;
-                text-align: center;
-                padding: 0;
-                margin: 0 auto;
-                display: inline-block;
-                height: 80px;
-                transition: all 0.4s linear;
-                overflow: hidden;
-                text-transform: lowercase;
-                font-size: 0.3rem;
-                font-weight: 100;
-                line-height: 1rem;
-                letter-spacing: 0.07rem;
-            }
-            
-            .logo:hover
-            {
-                height: 120px;
-            }
-            
-            a.nav
-            {
-                font-family: "body", serif;
-                font-weight: 100;
-                opacity: 0.7;
-                color: #fff;
-                text-decoration: none;
-                transition: all 0.2s linear;
-                height: 1.4rem;
-                width: max-content;
-                margin: 35px auto 0px auto;
-            }
-            
-            a.nav:hover
-            {
-                opacity: 1;
-            }
-            
-            .nav::after 
-            {
-                content: '';
-                margin-top: 0.3rem;
-                display: block;
-                width: 0;
-                opacity: 0.7;
-                height: 2px;
-                background: #fff;
-                transition: width 0.3s;
-            }
-
-            .nav:hover::after 
-            {
-                opacity: 1;
-                width: 100%;
-            }
-            
-            #hero-text
-            {
-                margin: 170px 250px;
-                font-family: 'hero', sans-serif;
-                text-transform: uppercase;
-                font-weight: 500;
-                font-size: 3rem;
-                opacity: 0.8;
-            }
-            
-            #typed
-            {
-                font-size: 5rem;
-            }
-            
-            @keyframes fadein{0% {opacity: 0;}20% {opacity: 0;}100% {opacity: 1;}}
-            @media screen and (max-width:500px){html{font-size:1rem;padding-top:80px;}iframe{display:none;}a{display:block;}}
-		</style>
-
-		<!--<link rel="stylesheet" type="text/css" href="./kt-style.css" />-->
+        <link rel="stylesheet" type="text/css" href="./style.css" />
 		<link id="favicon" rel="shortcut icon" type="image/png" href="./favicon.png">
 	</head>
 
@@ -156,19 +19,110 @@
 
 		<iframe style="-webkit-filter: grayscale(100%) brightness(50%); pointer-events: none; top:-70px; left:-50px; position: fixed; z-index: -99; width: 1550px; height: calc(100% + 220px);animation-name: fadein;animation-duration: 5s;animation-timing-function: ease-in;" width="100%" height="100%" src="https://www.youtube.com/embed/ZFBoN7yIMZw?start=19&autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
 		
-		<header class="sgcroll">
-            <a class="nav" href="index.html">Who We Are</a>
-            <a class="nav" href="index.html">The Process</a>
-<!--            <a class="nav" href="index.html">The Tools</a>-->
+		
+		<!-- NAVIGATION BAR -->
+		<header id="nav" class="sgcroll">
+            <a href="index.html">Who We Are</a>
+            <a href="index.html">The Process</a>
+<!--            <a href="index.html">The Tools</a>-->
 		    <div class="logo">
                 <img src="KnowledgeTree.png" style="width: 50px;">
                 <h1 style="opacity: 0.85">Knowledge Tree<br>Consulting</h1>
 		    </div>
-		    <a class="nav" href="index.html">Blog</a>
-<!--		    <a class="nav" href="index.html">Members</a>-->
-            <a class="nav" href="index.html">Contact</a>
+		    <a href="index.html">Blog</a>
+<!--		    <a href="index.html">Members</a>-->
+            <a href="index.html">Contact</a>
 		</header>
+       
+        <style>
+        #nav
+        {
+            display: grid;
+        /*                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;*/
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
 
+            width: calc(100% - 100px);
+            position: fixed;
+            padding: 15px 50px;
+            margin: 0;
+            top: 0px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .scroll
+        {
+            background-color: #000;
+        }
+
+        .logo
+        {
+            cursor: pointer; 
+            font-family: 'logo', sans-serif;
+            color: #fff;
+            width: 180px;
+            text-align: center;
+            padding: 0;
+            margin: 0 auto;
+            display: inline-block;
+            height: 80px;
+            transition: all 0.4s linear;
+            overflow: hidden;
+            text-transform: lowercase;
+            font-size: 0.3rem;
+            font-weight: 100;
+            line-height: 1rem;
+            letter-spacing: 0.07rem;
+        }
+
+        .logo:hover
+        {
+            height: 120px;
+        }
+
+        #nav a
+        {
+            font-family: "body", serif;
+            font-weight: 100;
+            opacity: 0.7;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.2s linear;
+            height: 1.4rem;
+            width: max-content;
+            margin: 35px auto 0px auto;
+        }
+
+        #nav a:hover
+        {
+            opacity: 1;
+        }
+
+        #nav a::after 
+        {
+            content: '';
+            margin-top: 0.3rem;
+            display: block;
+            width: 0;
+            opacity: 0.7;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s;
+        }
+
+        #nav a:hover::after 
+        {
+            opacity: 1;
+            width: 100%;
+        }
+        </style>
+        
+        
+        
+        
+        
+        <!-- HERO BANNER -->
         <div id="hero-text">
             <div id="typed-strings">
                 <p>Continual growth means adapting</p>
@@ -177,34 +131,222 @@
             </div>
             <span id="typed"></span>
         </div>
-        
+
         <script>
             var typed = new Typed("#typed", 
             {
                 stringsElement: '#typed-strings',
-                typeSpeed: 60,
+                typeSpeed: 50,
                 smartBackspace: true,
                 fadeOut: false,
                 backSpeed: 40,
-                backDelay: 1000,
+                backDelay: 1500,
                 showCursor: false,
-                
             });
         </script>
-        
-        <div style="font-family:'body'; width:100%; position: absolute; bottom: 20px; opacity: 0.6;">
-            <svg class="arrows" style="width: 60px; height: 20px; transform: scale(0.6);">
-                <path class="a1" d="M0 0 L30 18 L60 0" style="stroke: #fff; fill: transparent; stroke-width: 2px; "></path>
+
+        <div id="scroll-icon">
+            <svg class="arrows" style="width:60px;height:20px;transform:scale(0.6);">
+                <path class="a1" d="M0 0 L30 18 L60 0" style="stroke:#fff;fill:transparent;stroke-width:2px;"></path>
             </svg>
         </div>
         
+        <style>
+        #hero-text
+        {
+            margin: 270px 250px;
+            font-family: 'hero', sans-serif;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 3rem;
+            opacity: 0.8;
+        }
+
+        #typed
+        {
+            font-size: 5rem;
+        }
+
+        #scroll-icon
+        {
+            font-family:'body';
+            width:100%;
+            position: absolute;
+            bottom: 20px;
+            opacity: 0.6;
+        }
+        </style>
         
-<!--
-        <div style="margin-top:350px; width:100%; background-color: #000;padding: 50px 0px;">
-            <h2>Who We Are</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        
+        
+        
+        
+        <div style="position: absolute; top: 100%; padding: 50px 0; background: #000; width:100%; box-shadow: 0 0px 100px 0px #000;">
+           
+        <!-- ABOUT US -->
+        <div id="about-container">
+
+            <img src="peter.jpeg" alt="Photograph of Peter Guinane" style="grid-column-start: 2; grid-column-end: 3; grid-row-start: 2; grid-row-end: 5;">
+            <h3 style="grid-column-start: 2; grid-column-end: 3; grid-row-start: 5; grid-row-end: 6;">Peter Guinane</h3>
+            <p style="grid-column-start: 2; grid-column-end: 3; grid-row-start: 6; grid-row-end: 7;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+
+            <img src="george.jpeg" alt="Photograph of George Urvari" style="grid-column-start: 4; grid-column-end: 5; grid-row-start: 1; grid-row-end: 3;">
+            <h3 style="grid-column-start: 4; grid-column-end: 5; grid-row-start: 3; grid-row-end: 4;">George Urvari</h3>
+            <p style="grid-column-start: 4; grid-column-end: 5; grid-row-start: 4; grid-row-end: 6;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
         </div>
--->
+        
+        <!-- TESTEMONIALS -->
+        <div id="testemonial">
+            <div id="quote-0" class="quote quote-selected">
+                <h3>&ldquo;They are very good.&rdquo;</h3>
+                <p class="quote-by">— Jack Guinane</p>
+            </div>
+            
+            <div id="quote-1" class="quote quote-unselected">
+                <h3>&ldquo;Wow.&rdquo;</h3>
+                <p class="quote-by">— Barack Obama</p>
+            </div>
+            
+            <div id="quote-2" class="quote quote-unselected">
+                <h3>&ldquo;Fantastic!&rdquo;</h3>
+                <p class="quote-by">— John Smith</p>
+            </div>
+        </div>
+          
+        <script>
+            var current = 0;
+            var total = 3;
+            
+            function changeQuote()
+            {
+                var cur = document.getElementById("quote-" + current);
+                cur.className = "quote quote-unselected";
+                current = (current + 1) % total;
+                var next = document.getElementById("quote-" + current);
+                next.className = "quote quote-selected";
+            }
+            
+            var repeat = setInterval(changeQuote, 7000);
+            
+        </script>
+           
+        <style>
+            #about-container
+            {
+                grid-template-columns: auto 250px 200px 250px auto; 
+                grid-template-rows: 157px 157px 60px 97px 60px auto;
+                display: grid;
+                text-align: left;
+            }
+
+            #about-container img
+            {
+                width: 100%;
+            }
+
+            #testemonial
+            {
+                margin: 100px auto;
+                height: 120px;
+                position: relative;
+            }
+
+            .quote-by
+            {
+                font-family: "hero";
+            }
+            
+            .quote
+            {
+                position: absolute;
+                top: 0;
+                margin-left: auto;
+                margin-right: auto;
+                left: 0;
+                right: 0;
+            }
+
+            .quote-unselected
+            {
+                animation-name: quote-out;
+                animation-duration: 1s;
+                animation-timing-function: cubic-bezier(0.48, -0.04, 0.31, 0.99);
+                opacity: 0;
+            }
+            
+            .quote-selected
+            {
+                animation-name: quote-in;
+                animation-duration: 2.5s;
+                animation-timing-function: cubic-bezier(0.48, -0.04, 0.31, 0.99);
+            }
+            
+            @keyframes quote-in
+            {
+                0%
+                {
+                    opacity: 0;
+                    transform: translateX(100px);
+                }
+                
+                90%
+                {
+                    opacity: 1;
+                }
+                
+                100%
+                {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+            }
+            
+            @keyframes quote-out
+            {
+                0%
+                {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+                
+                100%
+                {
+                    opacity: 0;
+                    transform: translateX(-80px);
+                }
+            }
+        </style>
+        
+        
+        
+        
+        
+        
+        <div style="background: linear-gradient(5deg, rgba(42,35,35,1) 50%, rgba(0,0,0,1) 50%); height: 200px;width: 100%;"></div>
+        <div style="padding: 80px 0;background-color: #2a2323;">
+            <div style="margin:0 auto; padding: 0 50px;display: grid; grid-template-columns: 1fr 1fr 1fr 20px 1fr 1fr 20px 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr 20px 1fr 1fr;">
+
+                <h3 style="place-self: center; grid-column-start: 5; grid-column-end: 8; grid-row-start: 5; grid-row-end: 7;">The 5 Branches</h3>
+
+                <div style="color: black;width: 100%; height: 200px; background-color: #fff; opacity: 0.8; border-radius: 15px; 
+                grid-column-start: 5; grid-column-end: 7; grid-row-start: 1; grid-row-end: 3;">1</div>
+
+                <div style="color: black;width: 100%; height: 200px; background-color: #fff; opacity: 0.8; border-radius: 15px; 
+                grid-column-start: 2; grid-column-end: 4; grid-row-start: 2; grid-row-end: 4;">2</div>
+
+                <div style="color: black;width: 100%; height: 200px; background-color: #fff; opacity: 0.8; border-radius: 15px; 
+                grid-column-start: 8; grid-column-end: 10; grid-row-start: 2; grid-row-end: 4;">3</div>
+
+                <div style="color: black;width: 100%; height: 200px; background-color: #fff; opacity: 0.8; border-radius: 15px; 
+                grid-column-start: 1; grid-column-end: 3; grid-row-start: 5; grid-row-end: 7;">4</div>
+
+                <div style="color: black;width: 100%; height: 200px; background-color: #fff; opacity: 0.8; border-radius: 15px; 
+                grid-column-start: 9; grid-column-end: 11; grid-row-start: 5; grid-row-end: 7;">5</div>
+            </div>
+        </div>
+
+        
+        </div>
 
 
 	</body>

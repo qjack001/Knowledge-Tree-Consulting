@@ -1,0 +1,46 @@
+@font-face
+{
+    font-family: 'logo';
+    src: url("fonts/logo.otf");
+}
+
+@font-face
+{
+    font-family: 'hero';
+    src: url("fonts/Optician-Sans.otf");
+}
+
+@font-face
+{
+    font-family: 'body';
+    src: url("fonts/SelfModern.ttf");
+}
+
+html, body
+{
+    margin: 0;
+    padding: 0;
+}
+
+html
+{
+    color: #fff;
+    background-color: #000;
+    font-family: sans-serif;
+    text-align: center;
+    font-family: "body";
+}
+
+h3, p
+{
+    opacity: 0.85;
+}
+
+h3
+{
+    font-weight: 100;
+    font-size: 1.8rem;
+}
+
+@keyframes fadein{0% {opacity: 0;}20% {opacity: 0;}100% {opacity: 1;}}
+@media screen and (max-width:500px){html{font-size:1rem;padding-top:80px;}iframe{display:none;}a{display:block;}}
