@@ -43,4 +43,3 @@ h3
 }
 
 @keyframes fadein{0% {opacity: 0;}20% {opacity: 0;}100% {opacity: 1;}}
-@media screen and (max-width:500px){html{font-size:1rem;padding-top:80px;}iframe{display:none;}a{display:block;}}
