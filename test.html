@@ -32,8 +32,7 @@
             <a href="index.html">The Process</a>
             <a href="index.html">The Tools</a>
 		    <div class="logo">
-                <img src="KnowledgeTree.png" style="width: 50px;">
-                <h1 style="opacity: 0.85">Knowledge Tree<br>Consulting</h1>
+                <img src="KnowledgeTree.png">
 		    </div>
 		    <a href="index.html">Blog</a>
 		    <a href="index.html">Members</a>
@@ -82,8 +81,7 @@
                 left: 0;
                 background-color: #000;
                 z-index: 99;
-                opacity: 1;
-                padding: 150px 0px;
+                padding: 100px 0px;
                 animation-name: fade-in;
                 animation-duration: 0.4s;
             }
@@ -110,30 +108,20 @@
 
             .logo
             {
-                cursor: pointer; 
-                font-family: 'logo', sans-serif;
+                cursor: pointer;
                 color: #fff;
                 width: 180px;
                 text-align: center;
                 padding: 0;
                 margin: 0 auto;
                 display: inline-block;
-                height: 80px;
                 transition: all 0.4s linear;
-                overflow: hidden;
-                text-transform: lowercase;
-                font-size: 0.3rem;
-                font-weight: 100;
-                line-height: 1rem;
-                letter-spacing: 0.07rem;
             }
-
-/*
-            .logo:hover
+            
+            .logo img
             {
-                height: 120px;
+                width: 50px;
             }
-*/
 
             #nav button
             {
@@ -241,6 +229,11 @@
                     grid-column-end: 3;
                 }
                 
+                .logo img
+                {
+                    width: 40px;
+                }
+                
                 #nav a
                 {
                     display: none;
@@ -289,7 +282,7 @@
         <style>
             #hero-text
             {
-                margin: 300px 200px;
+                margin: 250px 200px;
                 font-family: 'hero', sans-serif;
                 text-transform: uppercase;
                 font-weight: 500;
