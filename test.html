@@ -11,7 +11,7 @@
 		<meta name="theme-color" content="#000000" />
 		
 		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="./style.css" />
 		<link id="favicon" rel="shortcut icon" type="image/png" href="./favicon.png">
 	</head>
@@ -28,10 +28,10 @@
                     menu
                 </i>
             </button>
-            <a href="index.html">Who We Are</a>
-            <a href="index.html">The Process</a>
+            <a href="#about-container">Who We Are</a>
+            <a href="#process-container">The Process</a>
             <a href="index.html">The Tools</a>
-		    <div class="logo">
+		    <div onclick="window.location = 'https://knowledgetreeconsulting.ca';" class="logo">
                 <img src="KnowledgeTree.png">
 		    </div>
 		    <a href="index.html">Blog</a>
@@ -40,12 +40,12 @@
 		</header>
      
         <div id="menu">
-            <a href="index.html">Who We Are</a>
-            <a href="index.html">The Process</a>
-            <a href="index.html">The Tools</a>
-		    <a href="index.html">Blog</a>
-		    <a href="index.html">Members</a>
-            <a href="index.html">Contact</a>
+            <a href="#about-container" onclick="menu()">Who We Are</a>
+            <a href="#process-container" onclick="menu()">The Process</a>
+            <a href="#about-container" onclick="menu()">The Tools</a>
+		    <a href="#about-container" onclick="menu()">Blog</a>
+		    <a href="#about-container" onclick="menu()">Members</a>
+            <a href="#about-container" onclick="menu()">Contact</a>
         </div>
       
         <script>
@@ -91,7 +91,7 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
                 grid-template-rows: auto;
-
+                background: linear-gradient(#000 20%, rgba(0, 0, 0, 0) 100%);
                 width: calc(100% - 100px);
                 position: fixed;
                 padding: 15px 50px;
@@ -212,7 +212,12 @@
                 
                 .logo
                 {
-                    width: 80px;
+                    width: 40px;
+                }
+                
+                .logo img
+                {
+                    width: 40px;
                 }
             }
                 
@@ -227,11 +232,6 @@
                 {
                     grid-column-start: 2;
                     grid-column-end: 3;
-                }
-                
-                .logo img
-                {
-                    width: 40px;
                 }
                 
                 #nav a
