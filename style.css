@@ -1,11 +1,5 @@
 @font-face
 {
-    font-family: 'logo';
-    src: url("fonts/logo.otf");
-}
-
-@font-face
-{
     font-family: 'hero';
     src: url("fonts/Optician-Sans.otf");
 }

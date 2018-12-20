@@ -297,11 +297,34 @@
 
             #scroll-icon
             {
-                font-family:'body';
-                width:100%;
+                font-family: 'body';
+                width: 100%;
                 position: absolute;
                 bottom: 20px;
                 opacity: 0.6;
+            }
+            
+            #home-content
+            {
+                position: absolute;
+                top: 100%;
+                padding: 50px 0;
+                background: #000;
+                width: 100%;
+                box-shadow: 0 0px 100px 0px #000;
+            }
+            
+            @media screen and (max-height: 590px)
+            {
+                #home-content
+                {
+                    position: relative;
+                }
+                
+                #scroll-icon
+                {
+                    display: none;
+                }
             }
             
             @media screen and (max-width: 1200px)
@@ -356,7 +379,7 @@
         
         
         
-        <div style="position: absolute; top: 100%; padding: 50px 0; background: #000; width:100%; box-shadow: 0 0px 100px 0px #000;">
+        <div id="home-content">
            
         <!-- ABOUT US -->
         <div id="about-container">
@@ -769,6 +792,7 @@
             
                 #process-title
                 {
+                    padding: 0px 0px 20px 0px;
                     grid-column-start: 1; 
                     grid-column-end: 8; 
                     grid-row-start: 7; 
