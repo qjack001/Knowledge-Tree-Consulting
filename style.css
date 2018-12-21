@@ -188,7 +188,7 @@ h3
     box-shadow: 0 0px 100px 0px #000;
 }
 
-#about-container img
+#about-container img, #about-container picture
 {
     width: 100%;
     max-width: 300px;
@@ -230,7 +230,7 @@ h3
     opacity: 1;
 }
 
-img.about-left
+img.about-left, picture.about-left
 {
     grid-column-start: 2;
     grid-column-end: 3;
@@ -254,7 +254,7 @@ p.about-left
     grid-row-end: 7;
 }
 
-img.about-right
+img.about-right, picture.about-right
 {
     grid-column-start: 4;
     grid-column-end: 5;
@@ -752,7 +752,7 @@ footer img
         grid-template-rows: auto;
     }
 
-    img.about-right
+    img.about-right, picture.about-right
     {
         padding-top: 50px;
         grid-column-start: 2;
