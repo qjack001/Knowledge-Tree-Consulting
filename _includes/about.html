@@ -1,0 +1,258 @@
+<!-- ABOUT US -->
+<div id="about-container">
+
+    <img src="images/peter.jpeg" alt="Photograph of Peter Guinane" class="about-left">
+    <h3 class="about-left">Peter Guinane</h3>
+    <p class="about-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.<a class="cta-link" href="./">Get in touch</a></p>
+
+
+    <img src="images/george.jpeg" alt="Photograph of George Urvari" class="about-right">
+    <h3 class="about-right">George Urvari</h3>
+    <p class="about-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.<a class="cta-link" href="./">Get in touch</a></p>
+</div>
+
+<!-- TESTEMONIALS -->
+<div id="testemonial">
+    <div id="quote-0" class="quote quote-selected">
+        <h3>&ldquo;They are very good.&rdquo;</h3>
+        <p class="quote-by">— Jack Guinane</p>
+    </div>
+
+    <div id="quote-1" class="quote quote-unselected">
+        <h3>&ldquo;Wow.&rdquo;</h3>
+        <p class="quote-by">— Barack Obama</p>
+    </div>
+
+    <div id="quote-2" class="quote quote-unselected">
+        <h3>&ldquo;Fantastic!&rdquo;</h3>
+        <p class="quote-by">— John Smith</p>
+    </div>
+</div>
+
+<script>
+    var current = 0;
+    var total = 3;
+
+    function changeQuote()
+    {
+        var cur = document.getElementById("quote-" + current);
+        cur.className = "quote quote-unselected";
+        current = (current + 1) % total;
+        var next = document.getElementById("quote-" + current);
+        next.className = "quote quote-selected";
+    }
+
+    var repeat = setInterval(changeQuote, 7000);
+
+</script>
+
+<style>
+    #about-container img
+    {
+        width: 100%;
+        max-width: 300px;
+        place-self: center;
+        -webkit-mask-image: -webkit-linear-gradient(rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+        mask-image: -o-linear-gradient(rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    }
+
+    #about-container
+    {
+        grid-template-columns: auto 250px 12% 250px auto; 
+        grid-template-rows: 157px 157px 60px 97px 60px auto auto;
+        display: grid;
+        text-align: left;
+    }
+
+    .cta-link
+    {
+        color: #fff;
+        display: block;
+        margin: 20px 0;
+        background-color: #000;
+        border-radius: 6px;
+        padding: 5px 10px;
+        font-family: "hero";
+        font-size: 1.3rem;
+        text-decoration: none;
+        width: max-content;
+        border: 1px solid #fff;
+        opacity: 0.7;
+        transition: opacity 0.2s linear;
+    }
+
+    .cta-link:hover
+    {
+        opacity: 1;
+    }
+
+    img.about-left
+    {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 5;
+    }
+
+    h3.about-left
+    {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+
+    p.about-left
+    {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 6;
+        grid-row-end: 7;
+    }
+
+    img.about-right
+    {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    h3.about-right
+    {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    p.about-right
+    {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        grid-row-start: 4;
+        grid-row-end: 6;
+    }
+
+    #testemonial
+    {
+        margin: 100px auto 0px auto;
+        height: 120px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .quote-by
+    {
+        font-family: "hero";
+    }
+
+    .quote
+    {
+        position: absolute;
+        top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+    }
+
+    .quote-unselected
+    {
+        animation-name: quote-out;
+        animation-duration: 2s;
+        animation-timing-function: cubic-bezier(0.48, -0.04, 0.31, 0.99);
+        opacity: 0;
+    }
+
+    .quote-selected
+    {
+        animation-name: quote-in;
+        animation-duration: 2.5s;
+        animation-timing-function: cubic-bezier(0.48, -0.04, 0.31, 0.99);
+    }
+
+    @keyframes quote-in
+    {
+        0%
+        {
+            opacity: 0;
+            transform: translateX(40px);
+        }
+
+        90%
+        {
+            opacity: 1;
+        }
+
+        100%
+        {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    @keyframes quote-out
+    {
+        0%
+        {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+
+        90%
+        {
+            opacity: 0;
+        }
+
+        100%
+        {
+            opacity: 0;
+            transform: translateX(-40px);
+        }
+    }
+
+    @media screen and (max-width: 900px)
+    {
+        #about-container
+        {
+            grid-template-columns: auto 220px 40px 220px auto; 
+            grid-template-rows: 157px 157px 60px 97px 60px auto;
+        }
+    }
+
+    @media screen and (max-width: 520px)
+    {
+        #about-container
+        {
+            grid-template-columns: 1fr 5fr 1fr; 
+            grid-template-rows: auto;
+        }
+
+        img.about-right
+        {
+            padding-top: 50px;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 7;
+            grid-row-end: 8;
+        }
+
+        h3.about-right
+        {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 8;
+            grid-row-end: 9;
+        }
+
+        p.about-right
+        {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 9;
+            grid-row-end: 10;
+        }
+    }
+</style>
