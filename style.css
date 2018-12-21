@@ -1,3 +1,7 @@
+/*
+ * Refrence CSS, always compile into minified for production
+ */
+
 @font-face
 {
     font-family: 'hero';
@@ -695,11 +699,11 @@ footer img
     }
 }
 
-@media screen and (max-height: 380px) and (min-width: 520px)
+@media screen and (max-height: 390px) and (min-width: 520px)
 {
     #home-content
     {
-        top: 380px;
+        top: 390px;
     }
 
     #scroll-icon
@@ -718,6 +722,16 @@ footer img
     #hero-text
     {
         margin: 200px 20px;
+    }
+    
+    #home-content
+    {
+        top: 500px;
+    }
+
+    #scroll-icon
+    {
+        top: 460px;
     }
     
     #about-container
