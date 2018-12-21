@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include meta.html %}
+        
+        <title>{% if page.name %}{{ page.name }} - {% endif %}{{ site.name }}</title>
+        <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    </head>
+
+<!--
+####################################################################
+
+    __ __     ._    ,  |_ 
+    ||_/   `-.  \.  \ /  |/_
+    || \\,  ||  _\, y |\//
+             \\, \\/-.//        Knowledge Tree Consulting
+             ||._||.//_,
+           `-.\.//|_/                  -–—***—–-
+              | |//
+             /_//                Website by Jack Guinane
+            / /                   (https://guinane.xyz)
+           /=/     ____,
+          / |     ' || 
+        /, .\       ||
+
+
+####################################################################
+-->
+
+    <body>
+        {% include nav.html %}
+        
+        {{ content }}
+        
+        <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" /> <!-- prevent render blocking css -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </body>
+</html>
