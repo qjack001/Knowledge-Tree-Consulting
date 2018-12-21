@@ -5,13 +5,25 @@
 @font-face
 {
     font-family: 'hero';
-    src: url("fonts/Optician-Sans.otf");
+    src: url('/fonts/OpticianSans-Regular.eot');
+    src: url('Optician Sans'),
+        url('/fonts/OpticianSans-Regular.woff2') format('woff2'),
+        url('/fonts/OpticianSans-Regular.woff') format('woff'),
+        url('/fonts/OpticianSans-Regular.ttf') format('truetype'),
+        url('/fonts/OpticianSans-Regular.svg#OpticianSans-Regular') format('svg'),
+        url('/fonts/OpticianSans-Regular.eot?#iefix') format('embedded-opentype');
 }
 
 @font-face
 {
     font-family: 'body';
-    src: url("fonts/SelfModern.ttf");
+    src: url('/fonts/SelfModern.eot');
+    src: local('Self Modern'),
+        url('/fonts/SelfModern.woff2') format('woff2'),
+        url('/fonts/SelfModern.woff') format('woff'),
+        url('/fonts/SelfModern.ttf') format('truetype'),
+        url('/fonts/SelfModern.svg#SelfModern') format('svg'),
+        url('/fonts/SelfModern.eot?#iefix') format('embedded-opentype');
 }
 
 html, body
