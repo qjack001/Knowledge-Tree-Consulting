@@ -453,6 +453,7 @@ footer
 footer img
 {
     width: 80px;
+    padding: 15px;
 }
 
 @keyframes fade-in
@@ -520,6 +521,11 @@ footer img
     {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+    }
+    
+    .footer-col
+    {
+        margin-bottom: 40px;
     }
 }
 
@@ -840,10 +846,5 @@ footer img
     {
         grid-template-columns: auto;
         grid-template-rows: auto;
-    }
-
-    footer h4
-    {
-        margin-top: 40px;
     }
 }
