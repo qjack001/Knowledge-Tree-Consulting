@@ -842,6 +842,11 @@ footer img
         grid-row-end: 7;
     }
     
+    #foot-img
+    {
+        display: none;
+    }
+    
     footer
     {
         grid-template-columns: auto;
