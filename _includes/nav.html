@@ -9,7 +9,7 @@
     <a href="https://knowledgetreeconsulting.ca/#process">The Process</a>
     <a href="https://knowledgetreeconsulting.ca/#tool">The Tools</a>
     <div onclick="window.location = 'https://knowledgetreeconsulting.ca';" class="logo">
-        <img src="KnowledgeTree.png">
+        <img src="/assets/KnowledgeTree.png">
     </div>
     <a href="index.html">Blog</a>
     <a href="index.html">Members</a>
@@ -161,56 +161,4 @@
             transform: translateY(0px);
         }
     }
-
-    @media screen and (max-width: 1200px)
-    {
-        #nav
-        {
-            width: calc(100%);
-            padding: 15px 0px;
-        }
-
-    }
-
-    @media screen and (max-width: 900px)
-    {
-        #nav
-        {
-            font-size: 0.8rem;
-        }
-
-        .logo
-        {
-            width: 40px;
-        }
-
-        .logo img
-        {
-            width: 40px;
-        }
-    }
-
-    @media screen and (max-width: 650px)
-    {
-        #nav
-        {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-
-        .logo
-        {
-            grid-column-start: 2;
-            grid-column-end: 3;
-        }
-
-        #nav a
-        {
-            display: none;
-        }
-
-        #nav button
-        {
-            display: block;
-        }
-    }
-</style>
+</style><!--FOUC prevention-->
