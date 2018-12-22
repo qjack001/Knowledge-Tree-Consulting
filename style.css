@@ -129,7 +129,7 @@ h3
     opacity: 1;
 }
 
-#nav a::after
+#nav a::after, .cta-big::after
 {
     content: '';
     margin-top: 0.3rem;
@@ -141,7 +141,7 @@ h3
     transition: width 0.3s;
 }
 
-#nav a:hover::after
+#nav a:hover::after, .cta-big:hover::after
 {
     opacity: 1;
     width: 100%;
@@ -223,6 +223,17 @@ h3
     border: 1px solid #fff;
     opacity: 0.7;
     transition: opacity 0.2s linear;
+}
+
+.cta-big
+{
+    font-size: 3.5rem;
+    border: none;
+}
+
+.cta-big::after
+{
+    height: 6px;
 }
 
 .cta-link:hover
@@ -411,7 +422,7 @@ h4
 
 #tools
 {
-    padding: 60px 0px;
+    opacity: 0.85;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 40px;
@@ -428,7 +439,6 @@ h4
     grid-row-end: 4;
     overflow: hidden;
     border-radius: 15px 0px 0px 15px;
-    filter: grayscale(30%);
 }
 
 #tool-text
