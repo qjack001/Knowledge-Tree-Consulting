@@ -229,6 +229,7 @@ h3
 {
     font-size: 3.5rem;
     border: none;
+    margin: 100px auto;
 }
 
 .cta-big::after
