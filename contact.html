@@ -1,133 +1,37 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="mini-style.css" />
-    </head>
-    <body>
-        <!-- NAVIGATION BAR -->
-<header id="nav">
-    <button onclick="menu()">
-        <i id="menu-bttn" class="material-icons">
-            menu
-        </i>
-    </button>
-    <a href="https://knowledgetreeconsulting.ca/test/#about-container">Who We Are</a>
-    <a href="https://knowledgetreeconsulting.ca/test/#process">The Process</a>
-    <a href="https://knowledgetreeconsulting.ca/test/#tools">The Tools</a>
-    <div onclick="window.location = 'https://knowledgetreeconsulting.ca';" class="logo">
-        <img src="/assets/KnowledgeTree.png">
+---
+layout: default
+---
+
+<h4 style="font-size: 4rem; text-align: center; margin-top: 150px;">Contact</h4>
+<div class="contact-container">
+    <div style="text-align: right;">
+        <p><span class="label">Tel: </span>416-696-5110</p>
+        <p><span class="label">Email: </span><a style="color:#fff;" href="mailto:george@oriolelandscaping.com">george@oriolelandscaping.com</a></p>
+        <p><span class="label">Email: </span><a style="color:#fff;" href="mailto:peter@oriolelandscaping.com">peter@oriolelandscaping.com</a></p>
+
+        <div class="mapouter"><div class="gmap_canvas"><iframe style="width:100%;"height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=36%20Northline%20Road%20Toronto%2C%20Ontario%2C%20Canada%20M4B%203E2&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
+
+        <p>36 Northline Road<br>Toronto, Ontario, Canada<br>M4B 3E2</p>
     </div>
-    <a href="index.html">Blog</a>
-    <a href="index.html">Members</a>
-    <a href="index.html">Contact</a>
-</header>
+    <div>
+        <form action="action_page.php">
+            <label for="fname">Name</label>
+            <input type="text" id="fname" name="name" placeholder="Your name">
 
-<div id="menu">
-    <a href="https://knowledgetreeconsulting.ca/test/#about-container" onclick="menu()">Who We Are</a>
-    <a href="https://knowledgetreeconsulting.ca/#process" onclick="menu()">The Process</a>
-    <a href="https://knowledgetreeconsulting.ca/test/#tools" onclick="menu()">The Tools</a>
-    <a href="https://knowledgetreeconsulting.ca/#about-container" onclick="menu()">Blog</a>
-    <a href="https://knowledgetreeconsulting.ca/#about-container" onclick="menu()">Members</a>
-    <a href="https://knowledgetreeconsulting.ca/#about-container" onclick="menu()">Contact</a>
+            <label for="femail">Email</label>
+            <input type="email" id="femail" name="email" placeholder="name@example.com">
+
+            <label for="subject">Message</label>
+            <textarea id="subject" name="subject" placeholder="Write something..." style="height:200px"></textarea>
+        </form>
+        <button class="form-bttn" onclick="sendMail()">Submit</button>
+        <script>
+            function sendMail()
+            {
+                var sub = encodeURIComponent("Knowledge Tree Consulting inquiry — " + document.getElementById("fname").value + " (" + document.getElementById("femail").value + ")");
+                var body = encodeURIComponent(document.getElementById("subject").value);
+                window.location.href = "mailto:george@oriolelandscaping.com?cc=peter@oriolelandscaping.com&subject=" + sub + "&body=" + body;
+            }
+</script>
+    </div>
 </div>
-
-<script>
-    function menu()
-    {
-        var bttn = document.getElementById("menu-bttn");
-        var mnu = document.getElementById("menu");
-
-        if (bttn.innerHTML.indexOf("menu") !== -1)
-        {
-            bttn.innerHTML = "close";
-            mnu.style.display = "block";
-        }
-        else
-        {
-            bttn.innerHTML = "menu";
-            mnu.style.display = "none";
-        }
-    }
-</script>
-        <h4 style="font-size:4rem;text-align: center;margin-top: 200px;">Contact</h4>
-        <div class="contact-container">
-            <div>
-                
-            </div>
-            <div>
-                <form action="action_page.php">
-                    <label for="fname">Name</label>
-                    <input type="text" id="fname" name="name" placeholder="Your name">
-
-                    <label for="femail">Email</label>
-                    <input type="email" id="femail" name="email" placeholder="name@example.com">
-
-                    <label for="subject">Message</label>
-                    <textarea id="subject" name="subject" placeholder="Write something..." style="height:200px"></textarea>
-                </form>
-                <button class="form-bttn" onclick="sendMail()">Submit</button>
-                <script>
-                    function sendMail()
-                    {
-                        var sub = encodeURIComponent("Knowledge Tree Consulting inquiry — " + document.getElementById("fname").value + " (" + document.getElementById("femail").value + ")");
-                        var body = encodeURIComponent(document.getElementById("subject").value);
-                        window.location.href = "mailto:george@oriolelandscaping.com?cc=peter@oriolelandscaping.com&subject=" + sub + "&body=" + body;
-                    }
-</script>
-            </div>
-        </div>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- prevent render blocking css -->
-    </body>
-</html>
-
-
-<style>
-    label
-    {
-        font-family: 'hero';
-        padding: 0px 12px;
-        opacity: 0.7;
-    }
-    
-    input[type=text], select, textarea, .form-bttn, input[type=email]
-    {
-        font-family: 'body';
-        font-size: 1rem;
-        background-color: #1b1919; 
-        color: #fff;
-        border: none;
-        width: 100%;
-        padding: 12px;
-        border-radius: 4px;
-        box-sizing: border-box;
-        margin-top: 6px;
-        margin-bottom: 16px;
-        resize: vertical;
-    }
-
-    .form-bttn
-    {
-        background-color: #000;
-        font-family: 'hero';
-        border: 2px solid #fff;
-        cursor: pointer;
-        opacity: 0.7;
-        transition: all 0.2s linear;
-    }
-
-    .form-bttn:hover 
-    {
-        background-color: #1b1919;
-        opacity: 1;
-    }
-    
-    .contact-container 
-    {
-        padding: 50px;
-        text-align: left;
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 50px;
-    }
-</style>
