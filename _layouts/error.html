@@ -4,6 +4,7 @@
         {% include meta.html %}
         
         <title>{{ page.error }} - {{ page.message }}</title>
+        <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/mini-style.css" />
     </head>
 
 <!--
@@ -32,5 +33,6 @@
         <h4 style="font-size: 4rem; text-align: center; margin-top: 200px;">{{ page.error }}</h4>
         <h3>{{ page.message }}</h3>
         <p style="padding-bottom: 100px;"><a href="https://knowledgetreeconsulting.ca" style="color:#fff;">Go Home</a></p>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- prevent render blocking css --> 
     </body>
 </html>
