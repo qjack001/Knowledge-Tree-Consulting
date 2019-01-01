@@ -6,7 +6,7 @@
 {
     font-family: 'hero';
     src: url('/fonts/OpticianSans-Regular.eot');
-    src: url('Optician Sans'),
+    src: local('Optician Sans'),
         url('/fonts/OpticianSans-Regular.woff2') format('woff2'),
         url('/fonts/OpticianSans-Regular.woff') format('woff'),
         url('/fonts/OpticianSans-Regular.ttf') format('truetype'),
