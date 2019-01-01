@@ -229,7 +229,7 @@ h3
 {
     font-size: 3.5rem;
     border: none;
-    margin: 100px auto;
+    margin: 150px auto;
 }
 
 .cta-big::after
@@ -1019,5 +1019,10 @@ input[type=text], select, textarea, .form-bttn, input[type=email]
         padding: 20px;
         grid-template-columns: auto;
         grid-row-gap: 20px;
+    }
+    
+    .cta-big
+    {
+        font-size: 2.5rem;
     }
 }
