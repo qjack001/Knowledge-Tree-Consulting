@@ -580,7 +580,7 @@ input[type=text], select, textarea, .form-bttn, input[type=email]
 
 #blog-grid a:hover .blog-grid-image
 {
-    filter: grayscale(100%);
+    filter: grayscale(0%);
 }
 
 #blog-grid
