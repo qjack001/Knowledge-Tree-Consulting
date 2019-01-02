@@ -7,11 +7,9 @@ permalink: /blog/
 <div id="blog-grid">
 {% for post in site.posts %}
     <a href="{{ site.baseurl }}{{ post.url }}">
-        <div tabindex="0" class="blog">
-            <div class="blog-grid-image" style="background-image: url('{{ site.baseurl }}{{ post.image }}');"></div>
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.content | strip_html }}</p>
-        </div>
+        <div class="blog-grid-image" style="background-image: url('{{ site.baseurl }}{{ post.image }}');"></div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.content | strip_html }}</p>
     </a>
 {% endfor %}
 </div>
