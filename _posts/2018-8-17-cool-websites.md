@@ -2,6 +2,7 @@
 layout: blog
 title: 3 Fun Websites About Plants
 author: Jack
+image: 
 ---
 
 
