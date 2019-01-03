@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Writing with Markdown for Better Content & HTML: Why & How To
+title: Writing with Markdown for Better Content & HTML
 author: Ian Lurie
 image: /images/How-to-Write-Creative-Blog-Content-that-Drives-Traffic.jpg
 ---
