@@ -646,6 +646,12 @@ input[type=text], select, textarea, .form-bttn, input[type=email]
     display: inline;
 }
 
+article iframe
+{
+    max-width: 100%;
+    width: 100%;
+}
+
 article
 {
     margin: 200px auto;
@@ -662,19 +668,20 @@ article h1
 article h1, article h2
 {
     text-align: center;
+    padding-top: 40px;
 }
 
 article h3
 {
     font-size: 1.1rem;
     font-weight: 900;
-
 }
 
 article p
 {
     opacity: 1.0;
     color: #dedede;
+    margin: 14px 0px;
 }
 
 article strong, article a
@@ -682,21 +689,39 @@ article strong, article a
     color: #fff;
 }
 
+article a
+{
+    border-bottom: 3px #ffffff8c solid;
+    transition: all linear 0.2s;
+}
+
+article a:hover
+{
+    border-bottom: 3px #fff solid;
+}
+
 .entry
 {
     text-align: left;
-    padding: 0 5%;
+    padding: 50px 5% 0 5%;
+    line-height: 1.3rem;
 }
 
 article li, td, th
 {
     color: #dedede;
+    margin: 14px 0px;
 }
 
 .blog-image, .entry img
 {
     width: 100%;
     border-radius: 8px;
+    margin-left: auto;
+	margin-right: auto;
+	display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 blockquote
@@ -979,6 +1004,11 @@ blockquote
 
 @media screen and (max-width: 650px)
 {
+    article
+    {
+        margin: 150px auto;
+    }
+    
     #typed
     {
         font-size: 3rem;

@@ -33,19 +33,19 @@ Well, yay for us, there's this thing called Markdown, and Markdown was created b
 
 Syntax is really simple. Again, I'm going to [link to the syntax](https://daringfireball.net/projects/markdown/syntax). I'm not going to give you the complete course on the syntax. The truth is this is 50% of what you'll probably need right here.
 
-![example](1-54675.jpg)
+![example](/images/1-54675.jpg)
 
 But just as an example, if you want to do a level one heading, you do a single pound sign or a hash, a space, and then whatever your text is. When you convert it to HTML, it will automatically become H1, heading one, closing H1. Same thing with H2. You just do two hashes. You can imagine what you do for H3. It's three hashes.
 
-![example](2-59007.jpg)
+![example](/images/2-59007.jpg)
 
 **Paragraphs** are created automatically. So if you write some text and you hit Enter or return twice, you'll get a clean paragraph. If you want, by the way, for this to be a hard break instead, then you just do two spaces and then return, and it'll put a BR there instead of a paragraph.
 
-![example](3-68439.jpg)
+![example](/images/3-68439.jpg)
 
 **Lists** become lists, and this is one of the toughest things for writers. It was always the thing that slows me down the most is lists are pretty complicated in HTML. Well, here, you just go one, two, three, just normally your text, and when you save it and convert it, it's going to become order list, list item, list item, list item, closing order list. It's that easy. If you want to do a bulleted list, you just use asterisks instead. It'll do the same thing.
 
-![example](4-68775.jpg)
+![example](/images/4-68775.jpg)
 
 **Links**, I got really excited so I had to add this up here. Links are also really simple and in fact, again, super simplified in Markdown. What you've got here is you put your text in brackets, then in parentheses you put your web address. It will convert to a full link with the text as your proper link text. You can do the same thing with images. All you do is add an exclamation mark at the start.
 
