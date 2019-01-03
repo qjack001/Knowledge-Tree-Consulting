@@ -13,7 +13,9 @@ layout: default
         {% when '3' or '23' %}{{ d }}rd
         {% else %}{{ d }}th
     {% endcase %}, {{ page.date | date: "%Y" }}</p>
-    <img class="blog-image" alt="hero image" src="{{ site.baseurl }}{{ page.image }}">
+    {% if page.image %}
+        <img class="blog-image" alt="hero image" src="{{ site.baseurl }}{{ page.image }}">
+    {% endif %}
 
     <div class="entry">
         {{ content }}
