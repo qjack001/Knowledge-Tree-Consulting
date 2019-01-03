@@ -646,6 +646,68 @@ input[type=text], select, textarea, .form-bttn, input[type=email]
     display: inline;
 }
 
+article
+{
+    margin: 200px auto;
+    max-width: 800px;
+    width: calc(100% - 60px);
+}
+
+article h1
+{
+    font-family: "hero";
+    font-size: 3rem;
+}
+
+article h1, article h2
+{
+    text-align: center;
+}
+
+article h3
+{
+    font-size: 1.1rem;
+    font-weight: 900;
+
+}
+
+article p
+{
+    opacity: 1.0;
+    color: #dedede;
+}
+
+article strong, article a
+{
+    color: #fff;
+}
+
+.entry
+{
+    text-align: left;
+    padding: 0 5%;
+}
+
+article li, td, th
+{
+    color: #dedede;
+}
+
+.blog-image, .entry img
+{
+    width: 100%;
+    border-radius: 8px;
+}
+
+blockquote
+{
+    font-size: 2rem;
+    font-style: italic;
+    padding: 0;
+    margin: 80px -40px;
+    text-align: center;
+}
+
 @keyframes fade-in
 {
     0%
@@ -970,6 +1032,16 @@ input[type=text], select, textarea, .form-bttn, input[type=email]
 
 @media screen and (max-width: 520px)
 {
+    .entry
+    {
+        padding: 0;
+    }
+
+    blockquote
+    {
+        margin: 80px -25px;
+    }
+    
     #typed
     {
         font-size: 2rem;
