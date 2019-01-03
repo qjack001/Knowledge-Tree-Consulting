@@ -363,6 +363,13 @@ h4
     margin: 0;
 } 
 
+#who-we-are
+{
+    max-width: 500px;
+    margin: 0 auto 80px auto;
+    padding: 20px;
+}
+
 .material-icons
 {
     font-size: 2rem;
@@ -522,7 +529,7 @@ label, .label
     opacity: 0.7;
 }
 
-input[type=text], select, textarea, .form-bttn, input[type=email]
+input[type=text], select, textarea, .form-bttn, input[type=email], input[type=password]
 {
     font-family: 'body';
     font-size: 1rem;
@@ -554,6 +561,13 @@ input[type=text], select, textarea, .form-bttn, input[type=email]
     opacity: 1;
 }
 
+.page-title
+{
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 150px;
+}
+
 .contact-container 
 {
     padding: 50px 10%;
@@ -562,6 +576,14 @@ input[type=text], select, textarea, .form-bttn, input[type=email]
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 8%;
+}
+
+#member-container
+{
+    max-width: 500px;
+    padding: 40px;
+    margin: auto;
+    text-align: left;
 }
 
 .blog-grid-image
@@ -654,7 +676,7 @@ article iframe
 
 article
 {
-    margin: 200px auto;
+    margin: 160px auto;
     max-width: 800px;
     width: calc(100% - 60px);
 }
@@ -1011,7 +1033,7 @@ blockquote
 {
     article
     {
-        margin: 150px auto;
+        margin: 100px auto;
     }
     
     #typed
