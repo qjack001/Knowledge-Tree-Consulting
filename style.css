@@ -403,6 +403,7 @@ p.about-right
     background-color: #fff;
     opacity: 0.6;
     border-radius: 8px;
+    font-size: 0.9rem;
     padding: 10px;
     font-weight: bold;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 6px 6px rgba(0, 0, 0, 0.5);
@@ -417,7 +418,7 @@ h4
 
 #who-we-are
 {
-    max-width: 700px;
+    max-width: 720px;
     margin: 0 auto 80px auto;
     padding: 20px;
 }
