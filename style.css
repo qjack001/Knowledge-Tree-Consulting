@@ -805,6 +805,11 @@ article li, td, th
     max-width: 100%;
 }
 
+#lmn-link
+{
+    margin: 20px 0 20px auto;
+}
+
 blockquote
 {
     font-size: 2rem;
@@ -1307,6 +1312,11 @@ blockquote
         grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: 2;
+    }
+    
+    #lmn-link
+    {
+        margin: 20px auto 50px auto;
     }
     
     #foot-img
