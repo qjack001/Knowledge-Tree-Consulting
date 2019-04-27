@@ -5,6 +5,7 @@ authour: George Urvari
 image: images/IvankaConcreteKTC.jpg
 ---
 
+The following is an audio recording of Knowledge Tree's consultation with [Ivanka Concrete](https://ivankaconcrete.com/) in Szentendre, Hungary.
 <audio 
     controls
     src="/assets/IvankaConcreteAudio.mp3">
