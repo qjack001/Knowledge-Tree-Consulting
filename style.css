@@ -371,6 +371,7 @@ p.about-right
     animation-duration: 2s;
     animation-timing-function: cubic-bezier(0.48, -0.04, 0.31, 0.99);
     opacity: 0;
+    pointer-events: none;
 }
 
 .quote-selected
