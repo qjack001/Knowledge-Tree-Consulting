@@ -300,4 +300,13 @@ function relabelQuestions()
             question[i].className = "question";
         }
     }
+    
+    try
+    {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    catch(error)
+    {
+        window.scrollTo(0, 0);
+    }
 }
