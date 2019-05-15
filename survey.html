@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no'>
+        <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        
+        <title>Surveyor</title>
+        <link rel="stylesheet" type="text/css" href="./survey-style.css" />
+        <meta name="author" content="Jack Guinane" />
+        <link id="favicon" rel="shortcut icon" type="image/png" href="./favicon.png">
+    </head>
+
+    <body>
+        <header id="progress">
+            <div id="progress-bar"><p id="progress-bar-percent">0%</p></div>
+        </header>
+        
+        <nav class="go-back">
+            <button onclick="previousQuestion()" id="back-btn" class="hidden">Previous question</button>
+        </nav>
+        <nav class="go-next">
+            <button onclick="nextQuestion()" id="next-btn">Next</button>
+        </nav>
+        
+        <div id="content">
+            
+        </div>
+          
+        
+        <script type="text/javascript" src="script.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+    </body>
+</html>

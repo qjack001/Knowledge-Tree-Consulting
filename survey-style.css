@@ -1,0 +1,329 @@
+
+html
+{
+    background-color: black;     
+    color: rgba(255, 255, 255, 0.9);
+}
+
+*
+{
+    font-family: "Self Modern";
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.05rem;
+
+    -moz-font-feature-settings:"kern" 1;
+    -ms-font-feature-settings:"kern" 1;
+    -o-font-feature-settings:"kern" 1;
+    -webkit-font-feature-settings:"kern" 1;
+    font-feature-settings:"kern" 1;
+    font-kerning: normal;
+}
+
+#content
+{
+    max-width: 800px;
+    margin: auto;
+    width: calc(100% - 60px)
+}
+
+#progress
+{
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#progress-bar
+{
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 10px;
+    width: 0%;
+    transition: all 0.4s ease;
+}
+
+#progress-bar-percent
+{
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    float: right;
+    padding-right: 0.5rem;
+    line-height: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transform: translateX(3rem);
+    font-family: "Optician Sans";
+}
+
+h1, p
+{
+    margin: 0.5rem 0;
+}
+
+h1
+{
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.5em;
+}
+
+nav
+{
+    position: fixed;
+    left: 0;
+    z-index: 99;
+    margin: auto;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+nav.go-back:before
+{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg) translateY(-8px);
+    position: fixed;
+    margin: 0 calc(50% - 5.5px);
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+nav.go-back
+{
+    top: 30px;
+}
+
+nav.go-next
+{
+    bottom: 50px;
+}
+
+#back-btn, #next-btn
+{
+    font-family: "Optician Sans";
+    color: rgba(255, 255, 255, 0.9);
+    border: none;
+    outline: none;
+    line-height: 2rem;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    background: transparent;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+#back-btn.hidden
+{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#next-btn
+{
+    background: white;
+    color: black;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+#next-btn:hover
+{
+    transform: scale(1.1);
+    opacity: 1;
+    
+}
+
+#next-btn.submit:hover
+{
+    color: blue;
+}
+
+.question
+{
+    display: none;
+    opacity: 0;
+}
+
+.selected, .prev, .next
+{
+    position: absolute;
+    top: 150px;
+    transition: all 0.4s ease;
+    width: calc(100% - 80px);
+    max-width: 800px;
+    margin: auto;
+}
+
+.prev
+{
+    opacity: 0;
+    transform: translateY(-200px);
+    pointer-events: none;
+    user-select: none;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.next
+{
+    opacity: 0;
+    transform: translateY(200px);
+    pointer-events: none;
+    user-select: none;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+ul
+{
+    margin: 40px 0 100px 0;
+    padding: 0;
+}
+
+li::before
+{
+    content: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='check' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-check fa-w-16 fa-lg'%3E%3Cpath fill='transparent' d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' class=''%3E%3C/path%3E%3C/svg%3E");
+    width: 15px; 
+    height: 15px; 
+    border-radius: 4px; 
+    border: 2px solid white;
+    transition: all 0.05s ease;
+    display: block;
+    float: left;
+    margin-right: 1rem;
+    transform: translateY(-50%) translateX(-2rem);
+    position: absolute;
+    top: 50%;
+}
+
+li
+{
+    list-style: none;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 10px 0;
+    padding: 0.5rem 1rem 0.5rem 2.6rem;
+    border-radius: 4px;
+    user-select: none;
+    cursor: pointer;
+    line-height: 1.5rem;
+    position: relative;
+}
+
+li:hover
+{
+    background: rgba(255, 255, 255, 0.4);
+}
+
+li.clicked
+{
+    background: blue;
+    color: white;
+}
+
+li.clicked::before
+{
+    content: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='check' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-check fa-w-16 fa-lg'%3E%3Cpath fill='blue' d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' class=''%3E%3C/path%3E%3C/svg%3E");
+    border: 2px solid white;
+    background: white;
+    animation: click 0.5s ease;
+}
+
+h5
+{
+    outline: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    font-size: 2rem;
+}
+
+h5:empty::before
+{
+    content: "Enter your answer here";
+    opacity: 0.4
+}
+
+h5.name:empty::before
+{
+    content: "Enter your name here";
+    opacity: 0.4
+}
+
+h5.email:empty::before
+{
+    content: "Enter your email here";
+    opacity: 0.4
+}
+
+h5:focus
+{
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.scale
+{
+    border: 2px solid;
+    border-radius: 4px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+}
+
+.scale p
+{
+    font-size: 2rem;
+    border-right: 2px solid;
+    text-align: center;
+    margin: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.scale p:last-of-type
+{
+    border: none;
+}
+
+.scale p:hover
+{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.scale p.clicked
+{
+    background: blue;
+    color: white;
+    border-color: white;
+}
+
+.popup
+{
+    text-align: center;
+    padding-top: 200px;
+}
+
+@keyframes click
+{
+    0%
+    {
+        box-shadow: 0 0 0 0px rgba(86, 127, 255, 0.8);
+    }
+
+    100%
+    {
+        box-shadow: 0 0 0 12px rgba(86, 127, 255, 0);
+    }
+}
