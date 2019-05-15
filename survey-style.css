@@ -1,3 +1,27 @@
+@font-face
+{
+    font-family: 'hero';
+    src: url('/fonts/OpticianSans-Regular.eot');
+    src: local('Optician Sans'),
+        url('/fonts/OpticianSans-Regular.woff2') format('woff2'),
+        url('/fonts/OpticianSans-Regular.woff') format('woff'),
+        url('/fonts/OpticianSans-Regular.ttf') format('truetype'),
+        url('/fonts/OpticianSans-Regular.svg#OpticianSans-Regular') format('svg'),
+        url('/fonts/OpticianSans-Regular.eot?#iefix') format('embedded-opentype');
+}
+
+@font-face 
+{
+    font-family: 'body';
+    src:    url('/fonts/bretagne_self-modern_italic_web.eot');
+    src:    url('/fonts/bretagne_self-modern_italic_web.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/bretagne_self-modern_italic_web.woff') format('woff'),
+            url('/fonts/bretagne_self-modern_italic_web.woff2') format('woff2'),
+            url('/fonts/bretagne_self-modern_italic_web.ttf') format('truetype'),
+            url('/fonts/bretagne_self-modern_italic_web.svg#svgFontName') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
 
 html
 {
@@ -7,7 +31,7 @@ html
 
 *
 {
-    font-family: "Self Modern";
+    font-family: "body";
     font-weight: 400;
     line-height: 1.7;
     letter-spacing: 0.05rem;
@@ -57,7 +81,7 @@ html
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     transform: translateX(3rem);
-    font-family: "Optician Sans";
+    font-family: "hero";
 }
 
 h1, p
@@ -109,7 +133,7 @@ nav.go-next
 
 #back-btn, #next-btn
 {
-    font-family: "Optician Sans";
+    font-family: "hero";
     color: rgba(255, 255, 255, 0.9);
     border: none;
     outline: none;
