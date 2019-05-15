@@ -13,14 +13,14 @@
 @font-face 
 {
     font-family: 'body';
-    src:    url('/fonts/bretagne_self-modern_italic_web.eot');
-    src:    url('/fonts/bretagne_self-modern_italic_web.eot?#iefix') format('embedded-opentype'),
-            url('/fonts/bretagne_self-modern_italic_web.woff') format('woff'),
-            url('/fonts/bretagne_self-modern_italic_web.woff2') format('woff2'),
-            url('/fonts/bretagne_self-modern_italic_web.ttf') format('truetype'),
-            url('/fonts/bretagne_self-modern_italic_web.svg#svgFontName') format('svg');
+    src:    url('/fonts/bretagne_self-modern_regular_web.eot');
+    src:    url('/fonts/bretagne_self-modern_regular_web.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/bretagne_self-modern_regular_web.woff') format('woff'),
+            url('/fonts/bretagne_self-modern_regular_web.woff2') format('woff2'),
+            url('/fonts/bretagne_self-modern_regular_web.ttf') format('truetype'),
+            url('/fonts/bretagne_self-modern_regular_web.svg#svgFontName') format('svg');
     font-weight: normal;
-    font-style: italic;
+    font-style: normal;
 }
 
 html
@@ -128,7 +128,7 @@ nav.go-back
 
 nav.go-next
 {
-    bottom: 50px;
+    bottom: 40px;
 }
 
 #back-btn, #next-btn
