@@ -105,6 +105,7 @@ nav
     width: 100%;
     display: block;
     text-align: center;
+    
 }
 
 nav.go-back:before
@@ -113,9 +114,9 @@ nav.go-back:before
     display: block;
     width: 10px;
     height: 10px;
-    transform: rotate(45deg) translateY(-8px);
+    transform: rotate(45deg);
     position: fixed;
-    margin: 0 calc(50% - 5.5px);
+    left: calc(50% - 5px);
     border-left: 1px solid;
     border-top: 1px solid;
     border-color: rgba(255, 255, 255, 0.9);
@@ -124,11 +125,15 @@ nav.go-back:before
 nav.go-back
 {
     top: 30px;
+    width: 13rem;
+    left: calc(50% - 6.5rem);
 }
 
 nav.go-next
 {
     bottom: 40px;
+    width: 110px;
+    left: calc(50% - 55px);
 }
 
 #back-btn, #next-btn
@@ -337,6 +342,17 @@ h5:focus
 {
     text-align: center;
     padding-top: 200px;
+}
+
+h3:first-of-type
+{
+    margin-top: -20px;
+}
+
+h3 > .scale
+{
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
 }
 
 @keyframes click
