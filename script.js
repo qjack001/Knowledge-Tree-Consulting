@@ -1,4 +1,4 @@
-var data = '{"question":[{"title":"How good are you at making your product?","description":"1 = poor; 5 = excellent.","type":"scale","amount":5},{"title":"How good is your garden design?","description":"1 = poor; 5 = excellent.","type":"scale","amount":5},{"title":"How unique are your designs?","description":"1 = generic; 5 = distinctive.","type":"scale","amount":5},{"title":"How good your customer experience?","description":"1 = poor; 5 = excellent.","type":"scale","amount":5},{"title":"Which part of Economics does your business struggle with?","description":"Select all that apply.","type":"checkbox","options":["Budgeting","Book keeping","Payables","Receivables","Cashflow","Payroll","Insurance","Legal","Taxes","We have no problems. Our books are clean, we have lots of cash, and we get everything sent in on time."]},{"title":"Which part of Human Resources does your business struggle with?","description":"Select all that apply.","type":"checkbox","options":["Recruitment","Screening staff","Hiring","Training","Absenteeism","Punctuality","Retention/Turnover","Rewards","Corporate Culture","Identify Roles & Responsibilities","List of Staff & Years with Company","We\'re all good. We have high retention and a clear system of roles."]},{"title":"Which part of Sales & Marketing does your business struggle with?","description":"Select all that apply.","type":"checkbox","options":["Branding","Website","Truck Signs","Lawn Signs","Social Media","Screening Process","Networks for new connections","Our sales are execllent. Our website is engaging, we have a large network of connections, and we\'re popular on social media."]},{"title":"Which part of Operations does your business struggle with?","description":"Select all that apply.","type":"checkbox","options":["Yard","Supplier Connections","Equipment","Logistics","Productivity","Efficiency","Scheduling","Estimating","Kaizen – 5S, 7 Types of Waste, 10 Commandments","We have no problems. Our employees are efficiant and productive."]},{"title":"Which part of Technology & Integration does your business struggle with?","description":"Select all that apply.","type":"checkbox","options":["Software Accounting","Software Operations – Estimating","Software Operations - Scheduling","Software Design","We\'ve got all of our software down pat."]},{"title":"What would you do diffrently, if your company worked for you?","description":"","type":"text","format":"short answer"},{"title":"How much do you think your company could benefit from consulting?","description":"1 = not at all; 5 = very much.","type":"scale","amount":5},{"title":"If you are interested in our consulting, enter your email below.","description":"We\'ll reach out to you soon.","type":"text","format":"email"}]}';
+var data = '{"question":[{"1":"How good are you at making your product? (Out of ten)","2":"How good is your garden design?","3":"How unique are your designs?","4":"How good your customer experience?","type":"quad-scale"},{"title":"Which part of Economics does your business struggle with?","description":"Select all that apply.","type":"checkbox","options":["Budgeting","Book keeping","Payables","Receivables","Cashflow","Payroll","Insurance","Legal","Taxes","We have no problems. Our books are clean, we have lots of cash, and we get everything sent in on time."]},{"title":"Which part of Human Resources does your business struggle with?","description":"Select all that apply.","type":"checkbox","options":["Recruitment","Screening staff","Hiring","Training","Absenteeism","Punctuality","Retention/Turnover","Rewards","Corporate Culture","Identify Roles & Responsibilities","List of Staff & Years with Company","We\'re all good. We have high retention and a clear system of roles."]},{"title":"Which part of Sales & Marketing does your business struggle with?","description":"Select all that apply.","type":"checkbox","options":["Branding","Website","Truck Signs","Lawn Signs","Social Media","Screening Process","Networks for new connections","Our sales are execllent. Our website is engaging, we have a large network of connections, and we\'re popular on social media."]},{"title":"Which part of Operations does your business struggle with?","description":"Select all that apply.","type":"checkbox","options":["Yard","Supplier Connections","Equipment","Logistics","Productivity","Efficiency","Scheduling","Estimating","Kaizen – 5S, 7 Types of Waste, 10 Commandments","We have no problems. Our employees are efficiant and productive."]},{"title":"Which part of Technology & Integration does your business struggle with?","description":"Select all that apply.","type":"checkbox","options":["Software Accounting","Software Operations – Estimating","Software Operations - Scheduling","Software Design","We\'ve got all of our software down pat."]},{"title":"What would you do diffrently, if your company worked for you?","description":"","type":"text","format":"short answer"},{"title":"How much do you think your company could benefit from consulting?","description":"1 = not at all; 5 = very much.","type":"scale","amount":5},{"title":"If you are interested in our consulting, enter your email below.","description":"We\'ll reach out to you soon.","type":"text","format":"email"}]}';
 var current = 0;
 var question = [];
 var answer = [];
@@ -38,7 +38,14 @@ function submit()
         let answerOut = [];
         answer[i].forEach(v => answerOut.push(v));
         
-        if(answerOut.length == 1)
+        if(obj.question[i].type == "quad-scale")
+        {
+            responseOut[obj.question[i]["1"]] = answerOut[0];
+            responseOut[obj.question[i]["2"]] = answerOut[1];
+            responseOut[obj.question[i]["3"]] = answerOut[2];
+            responseOut[obj.question[i]["4"]] = answerOut[3];
+        }
+        else if(answerOut.length == 1)
         {
             responseOut[obj.question[i].title.replace(/\.|\?|\#|\$|\[|\]|\//, "")] = answerOut[0];
         }
@@ -101,6 +108,15 @@ function buildQuestion(dataIn, index)
         questionElement.className = "question";
     }
     
+    if(dataIn.type == "quad-scale")
+    {
+        questionElement.appendChild(getQuad(dataIn, index));
+        document.getElementById("content").appendChild(questionElement);
+        question.push(questionElement);
+        answer.push(["-","-","-","-"]);
+        return;
+    }
+    
     var titleElement = document.createElement("H1");
     var titleTxt = document.createTextNode(dataIn.title);
     titleElement.appendChild(titleTxt);
@@ -135,6 +151,63 @@ function buildQuestion(dataIn, index)
     document.getElementById("content").appendChild(questionElement);
     question.push(questionElement);
     answer.push(new Set());
+}
+
+function getQuad(dataIn, index)
+{
+    var output = document.createElement("DIV");
+    var q = [];
+    
+    for(let i = 0; i < 4; i++)
+    {
+        q.push(document.createElement("H3"));
+        q[i].appendChild(document.createTextNode((dataIn["" + (i+1)])));
+        q[i].appendChild(getQuadScale(index, i));
+        output.appendChild(q[i]);
+    }
+    
+    return output;
+}
+
+function getQuadScale(index, subindex)
+{
+    var output = document.createElement("DIV");
+    output.className = "scale";
+    var option = [];
+    
+    option.push(document.createElement("P"));
+    option[0].appendChild(document.createTextNode("<5"));
+    option[0].onclick = function() 
+    {
+        this.classList.toggle('clicked');
+        answer[index][subindex] = "<5";
+        for(let j = 1; j < 6; j++)
+        {
+            option[j].className = "";
+        }
+    };
+    output.appendChild(option[0]);
+    
+    for(let i = 0; i < 5; i++)
+    {
+        option.push(document.createElement("P"));
+        option[i+1].appendChild(document.createTextNode((i+6)));
+        option[i+1].onclick = function() 
+        {
+            this.classList.toggle('clicked');
+            answer[index][subindex] = i + 6;
+            for(let j = 0; j < 6; j++)
+            {
+                if(j != (i+1))
+                {
+                    option[j].className = "";
+                }
+            }
+        };
+        output.appendChild(option[i+1]);
+    }
+        
+    return output;
 }
 
 function getCheckboxes(options, index)
