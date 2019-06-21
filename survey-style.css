@@ -360,6 +360,18 @@ h3 > .scale
     margin-bottom: 2.5rem;
 }
 
+.downloader
+{
+    transform: scale(1.5) translateX(-20px) translateY(-180px);
+    transition: all 0.6s ease-out;
+}
+
+#next-btn.downloader:hover
+{
+    transform: scale(1.7) translateX(-20px) translateY(-160px);
+    opacity: 1;
+}
+
 @keyframes click
 {
     0%
