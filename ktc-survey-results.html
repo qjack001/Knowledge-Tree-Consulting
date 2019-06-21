@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no'>
+        <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name="author" content="Jack Guinane" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Knowledge Tree Consulting" />
+        <meta name="superfish" content="nofish">
+        <meta name="theme-color" content="#000000">
+        <meta name="robots" content="noindex,nofollow">
+        
+        <title>Business Health Survey Results | Knowledge Tree Consulting</title>
+        <link rel="stylesheet" type="text/css" href="./survey-style.css" />
+        <link id="favicon" rel="shortcut icon" type="image/png" href="./favicon.png">
+    </head>
+
+    <body>
+        <style>
+            .answer-div
+            {
+                background: rgba(255, 255, 255, 0.15);
+                padding: 3rem;
+                border-radius: 8px;
+                width: 80%;
+                max-width: 600px;
+                font-size: 14px;
+                margin-bottom: 80px;
+            }
+            
+            .answer-div h2
+            {
+                font-family: "hero";
+                opacity: 0.7;
+                font-weight: 100;
+                font-size: 1em;
+            }
+            
+            .answer-div p
+            {
+                font-weight: 100;
+                font-size: 2em;
+                opacity: 0.9;
+                margin-bottom: 50px;
+            }
+        </style>
+        
+        <div id="content"></div>
+        
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+        <script type="text/javascript" src='moment.js'></script>
+        <script>
+            function getDates(startDate, stopDate, onlyWorkingDays) 
+            {
+                let doWd = typeof onlyWorkingDays ==='undefined' ? false : onlyWorkingDays;
+
+                let dateArray = [];  
+                let dayNr;
+                let runDateObj = moment(startDate);  
+                let stopDateObj = moment(stopDate);
+
+                while (runDateObj <= stopDateObj) 
+                {
+                    dayNr = runDateObj.day();
+                    if (!doWd || (dayNr>0 && dayNr<6)) 
+                    {
+                        dateArray.push(moment(runDateObj).format('YYYY-MM-DD'));  
+                    }
+
+                    runDateObj = moment(runDateObj).add(1, 'days');
+                }
+                return dateArray;
+            }
+            
+            function load()
+            {
+                
+                var firebaseConfig = 
+                {
+                    apiKey: "AIzaSyCBMWKS487otIyO-oy4lJeiopLRJUOnd4Y",
+                    authDomain: "ktc-survey.firebaseapp.com",
+                    databaseURL: "https://ktc-survey.firebaseio.com",
+                    projectId: "ktc-survey",
+                    storageBucket: "ktc-survey.appspot.com",
+                    messagingSenderId: "160273374171",
+                    appId: "1:160273374171:web:e670a53f18547a92"
+                };
+
+                firebase.initializeApp(firebaseConfig);
+
+                var database = firebase.database();
+                
+                var today = new Date();
+                var dd = String(today.getDate()).padStart(2, '0');
+                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                var yyyy = today.getFullYear();
+
+                today = mm + '-' + dd + '-' + yyyy;
+                var lastYear = mm + '-' + dd + '-' + (yyyy - 1);
+                var time = getDates(lastYear, today);
+                time.forEach(function(date)
+                {
+                    var leadsRef = database.ref(date);
+                    leadsRef.on('value', function(snapshot) 
+                    {
+                        snapshot.forEach(function(childSnapshot) 
+                        {
+                            var childData = childSnapshot.val();
+                            if(childData != "")
+                            {
+                                buildElement(date, childData);
+                            }
+                        });
+                    });
+                });
+            }
+            
+            function buildElement(key, data)
+            {
+                var content = document.getElementById("content");
+                var timestamp = document.createElement("H6");
+                timestamp.appendChild(document.createTextNode(key));
+                content.appendChild(timestamp);
+                
+                var answer = document.createElement("DIV");
+                answer.className = "answer-div";
+                for(var key in data.response)
+                {
+                    var question = document.createElement("H2");
+                    question.appendChild(document.createTextNode(key));                                                      
+                    answer.appendChild(question);
+                    
+                    var input = document.createElement("P");
+                    input.appendChild(document.createTextNode(data.response[key]));                                                      
+                    answer.appendChild(input);
+                    content.appendChild(answer);
+                };
+                
+            }
+            
+            
+            load();
+        </script>
+    </body>
+</html>
