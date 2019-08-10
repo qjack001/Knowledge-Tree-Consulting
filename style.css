@@ -198,24 +198,56 @@ h3
     opacity: 0.8;
 }
 
+#ktc-hero
+{
+    max-width: 800px;
+    margin:100px auto;
+    padding: 50px;
+}
+#ktc-hero h2
+{
+    font-family: "hero";
+    font-size: 4rem;
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+#ktc-hero ol
+{
+    text-align: left;
+    max-width: 300px;
+    max-width: max-content;
+    margin: auto;
+    opacity: 0.6;
+}
+
+#ktc-hero a
+{
+    text-decoration: none;
+    background: #eee;
+    color: #000;
+    font-family: "hero";
+    border-radius: 50px;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    display: block;
+    max-width: 180px;
+    margin: 50px auto;
+    transition: transform 0.2s ease;
+}
+
+#ktc-hero a:hover
+{
+    transform: scale(1.1);
+}
+
 #typed
 {
     font-size: 5rem;
 }
 
-#scroll-icon
-{
-    font-family: 'body';
-    width: 100%;
-    position: absolute;
-    bottom: 20px;
-    opacity: 0.6;
-}
-
 #home-content
 {
-    position: absolute;
-    top: 100%;
     padding: 50px 0 0 0;
     background: #000;
     width: 100%;
@@ -1091,19 +1123,6 @@ blockquote
     }
 }
 
-@media screen and (max-height: 520px) and (min-width: 650px)
-{
-    #home-content
-    {
-        top: 520px;
-    }
-
-    #scroll-icon
-    {
-        display: none;
-    }
-}
-
 @media screen and (max-width: 650px)
 {
     article
@@ -1149,19 +1168,6 @@ blockquote
     }
 }
 
-@media screen and (max-height: 390px) and (min-width: 520px)
-{
-    #home-content
-    {
-        top: 390px;
-    }
-
-    #scroll-icon
-    {
-        display: none;
-    }
-}
-
 @media screen and (max-width: 520px)
 {
     .entry
@@ -1182,16 +1188,6 @@ blockquote
     #hero-text
     {
         margin: 200px 20px;
-    }
-    
-    #home-content
-    {
-        top: 500px;
-    }
-
-    #scroll-icon
-    {
-        top: 460px;
     }
     
     #about-container
