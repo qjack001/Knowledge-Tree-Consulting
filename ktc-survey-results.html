@@ -26,24 +26,52 @@
                 border-radius: 8px;
                 width: 80%;
                 max-width: 600px;
-                font-size: 14px;
+                font-size: 18px;
                 margin-bottom: 80px;
             }
             
             .answer-div h2
             {
                 font-family: "hero";
-                opacity: 0.7;
+                opacity: 0.5;
                 font-weight: 100;
-                font-size: 1em;
+                font-size: 1.1em;
             }
             
             .answer-div p
             {
                 font-weight: 100;
-                font-size: 2em;
+                font-size: 1.3em;
                 opacity: 0.9;
                 margin-bottom: 50px;
+            }
+            
+            .box-selected
+            {
+                border: white solid 1px;
+                padding: 10px;
+                border-radius: 8px;
+                display: inline-block;
+                width: 2em;
+                text-align: center;
+                background: blue;
+            }
+            
+            .box
+            {
+                display: inline-block;
+                border: white solid 1px;
+                padding: 15px 20px;
+            }
+            
+            .box1
+            {
+                border-radius: 8px 0px 0px 8px;
+            }
+            
+            .box10
+            {
+                border-radius: 0px 8px 8px 0px;
             }
         </style>
         
@@ -133,14 +161,160 @@
                     question.appendChild(document.createTextNode(key));                                                      
                     answer.appendChild(question);
                     
+                    if(data.response[key] == "10")
+                    {
+                        var box1 = document.createElement("DIV");
+                        box1.className = "box box1";
+                        answer.appendChild(box1);
+                        
+                        var box2 = document.createElement("DIV");
+                        box2.className = "box box2";
+                        answer.appendChild(box2);
+                        
+                        var box3 = document.createElement("DIV");
+                        box3.className = "box box3";
+                        answer.appendChild(box3);
+                        
+                        var box4 = document.createElement("DIV");
+                        box4.className = "box box4";
+                        answer.appendChild(box4);
+                        
+                        var box5 = document.createElement("DIV");
+                        box5.className = "box box5";
+                        answer.appendChild(box5);
+                    }
+                    else if(data.response[key] == "9")
+                    {
+                        var box1 = document.createElement("DIV");
+                        box1.className = "box box1";
+                        answer.appendChild(box1);
+                        
+                        var box2 = document.createElement("DIV");
+                        box2.className = "box box2";
+                        answer.appendChild(box2);
+                        
+                        var box3 = document.createElement("DIV");
+                        box3.className = "box box3";
+                        answer.appendChild(box3);
+                        
+                        var box4 = document.createElement("DIV");
+                        box4.className = "box box4";
+                        answer.appendChild(box4);
+                    }
+                    else if(data.response[key] == "8")
+                    {
+                        var box1 = document.createElement("DIV");
+                        box1.className = "box box1";
+                        answer.appendChild(box1);
+                        
+                        var box2 = document.createElement("DIV");
+                        box2.className = "box box2";
+                        answer.appendChild(box2);
+                        
+                        var box3 = document.createElement("DIV");
+                        box3.className = "box box3";
+                        answer.appendChild(box3);
+                    }
+                    else if(data.response[key] == "7")
+                    {
+                        var box1 = document.createElement("DIV");
+                        box1.className = "box box1";
+                        answer.appendChild(box1);
+                        
+                        var box2 = document.createElement("DIV");
+                        box2.className = "box box2";
+                        answer.appendChild(box2);
+                    }
+                    else if(data.response[key] == "6")
+                    {
+                        var box1 = document.createElement("DIV");
+                        box1.className = "box box1";
+                        answer.appendChild(box1);
+                    }
+                    
                     var input = document.createElement("P");
-                    input.appendChild(document.createTextNode(data.response[key]));                                                      
+                    input.appendChild(document.createTextNode((data.response[key] + "").replace(/,/g, ", "))); 
+                    if(data.response[key] == "10" || data.response[key] == "9" || data.response[key] == "8" || data.response[key] == "7" || data.response[key] == "6" || data.response[key] == "<5")
+                    {
+                        input.className = "box-selected";
+                    }
                     answer.appendChild(input);
+                    
+                    if(data.response[key] == "<5")
+                    {
+                        var box9 = document.createElement("DIV");
+                        box9.className = "box box9";
+                        answer.appendChild(box9);
+                        
+                        var box8 = document.createElement("DIV");
+                        box8.className = "box box8";
+                        answer.appendChild(box8);
+                        
+                        var box7 = document.createElement("DIV");
+                        box7.className = "box box7";
+                        answer.appendChild(box7);
+                        
+                        var box6 = document.createElement("DIV");
+                        box6.className = "box box6";
+                        answer.appendChild(box6);
+                        
+                        var box10 = document.createElement("DIV");
+                        box10.className = "box box10";
+                        answer.appendChild(box10);
+                    }
+                    else if(data.response[key] == "6")
+                    {
+                        var box9 = document.createElement("DIV");
+                        box9.className = "box box9";
+                        answer.appendChild(box9);
+                        
+                        var box8 = document.createElement("DIV");
+                        box8.className = "box box8";
+                        answer.appendChild(box8);
+                        
+                        var box7 = document.createElement("DIV");
+                        box7.className = "box box7";
+                        answer.appendChild(box7);
+                        
+                        var box10 = document.createElement("DIV");
+                        box10.className = "box box10";
+                        answer.appendChild(box10);
+                    }
+                    else if(data.response[key] == "7")
+                    {
+                        var box9 = document.createElement("DIV");
+                        box9.className = "box box9";
+                        answer.appendChild(box9);
+                        
+                        var box8 = document.createElement("DIV");
+                        box8.className = "box box8";
+                        answer.appendChild(box8);
+                        
+                        var box10 = document.createElement("DIV");
+                        box10.className = "box box10";
+                        answer.appendChild(box10);
+                    }
+                    else if(data.response[key] == "8")
+                    {
+                        var box9 = document.createElement("DIV");
+                        box9.className = "box box9";
+                        answer.appendChild(box9);
+                        
+                        var box10 = document.createElement("DIV");
+                        box10.className = "box box10";
+                        answer.appendChild(box10);
+                    }
+                    else if(data.response[key] == "9")
+                    {
+                        var box10 = document.createElement("DIV");
+                        box10.className = "box box10";
+                        answer.appendChild(box10);
+                    }
+                    
                     content.appendChild(answer);
                 };
                 
             }
-            
             
             load();
         </script>
