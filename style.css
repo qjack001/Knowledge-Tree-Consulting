@@ -291,7 +291,7 @@ h3
 #about-container
 {
     grid-template-columns: auto 250px 12% 250px auto; 
-    grid-template-rows: 157px 157px 60px 97px 60px auto auto;
+    grid-template-rows: auto;
     display: grid;
     text-align: left;
 }
@@ -334,24 +334,21 @@ img.about-left, picture.about-left
 {
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 5;
+    grid-row-start: 1;
 }
 
 h3.about-left
 {
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 5;
-    grid-row-end: 6;
+    grid-row-start: 2;
 }
 
 p.about-left
 {
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 6;
-    grid-row-end: 7;
+    grid-row-start: 3;
 }
 
 img.about-right, picture.about-right
@@ -359,23 +356,20 @@ img.about-right, picture.about-right
     grid-column-start: 4;
     grid-column-end: 5;
     grid-row-start: 1;
-    grid-row-end: 3;
 }
 
 h3.about-right
 {
     grid-column-start: 4;
     grid-column-end: 5;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-start: 2;
 }
 
 p.about-right
 {
     grid-column-start: 4;
     grid-column-end: 5;
-    grid-row-start: 4;
-    grid-row-end: 6;
+    grid-row-start: 3;
 }
 
 #testemonial
@@ -1045,7 +1039,7 @@ blockquote
     #about-container
     {
         grid-template-columns: auto 220px 40px 220px auto; 
-        grid-template-rows: 157px 157px 60px 97px 60px auto;
+        grid-template-rows: auto;
     }
     
     .divider
