@@ -313,6 +313,12 @@ h3
     transition: opacity 0.2s linear;
 }
 
+.tools-link
+{
+	margin: 20px 0;
+	float: right;
+}
+
 .cta-big
 {
     font-size: 3.5rem;
@@ -424,7 +430,7 @@ p.about-right
     margin: 0 auto;
     padding: 0 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 20px 1fr 1fr 20px 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 20px 1fr 1fr 20px 1fr 1fr 20px 1fr 1fr 1fr; 
     grid-template-rows: 1fr 1fr 1fr 20px 1fr 1fr 1fr;
 }
 
@@ -467,7 +473,7 @@ h4
     justify-self: center;
     place-self: center; 
     grid-column-start: 3; 
-    grid-column-end: 9; 
+    grid-column-end: 12; 
     grid-row-start: 5; 
     grid-row-end: 8;
 }
@@ -490,8 +496,8 @@ h4
 
 #process-3
 {
-    grid-column-start: 8;
-    grid-column-end: 10;
+    grid-column-start: 11;
+    grid-column-end: 13;
     grid-row-start: 2;
     grid-row-end: 4;
 }
@@ -506,10 +512,18 @@ h4
 
 #process-5
 {
-    grid-column-start: 9;
-    grid-column-end: 11;
+    grid-column-start: 12;
+    grid-column-end: 14;
     grid-row-start: 5;
     grid-row-end: 7;
+}
+
+#process-6
+{
+    grid-column-start: 8;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 3;
 }
 
 .tool
@@ -1066,8 +1080,8 @@ blockquote
 
     #process-1
     {
-        grid-column-start: 3;
-        grid-column-end: 6;
+        grid-column-start: 1;
+        grid-column-end: 4;
         grid-row-start: 1;
         grid-row-end: 2;
     }
@@ -1102,7 +1116,15 @@ blockquote
         grid-column-end: 8;
         grid-row-start: 5;
         grid-row-end: 6;
-    }
+	}
+	
+	#process-6
+	{
+		grid-column-start: 5;
+        grid-column-end: 8;
+        grid-row-start: 1;
+        grid-row-end: 2;
+	}
     
     footer
     {
@@ -1277,6 +1299,15 @@ blockquote
         grid-column-end: 2;
         grid-row-start: 6;
         grid-row-end: 7;
+	}
+	
+	#process-6
+    {
+        margin: 10px 0;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 7;
+        grid-row-end: 8;
     }
     
     .tool
@@ -1312,7 +1343,8 @@ blockquote
     
     .tool-link
     {
-        margin: 20px auto 50px auto;
+		margin: 20px auto 50px auto;
+		float: none;
     }
     
     #foot-img
