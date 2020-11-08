@@ -16,25 +16,8 @@ permalink: /contact/
         <p>36 Northline Road<br>Toronto, Ontario, Canada<br>M4B 3E2</p>
     </div>
     <div>
-        <form action="action_page.php">
-            <label for="fname">Name</label>
-            <input type="text" id="fname" name="name" placeholder="Your name">
-
-            <label for="femail">Email</label>
-            <input type="email" id="femail" name="email" placeholder="name@example.com">
-
-            <label for="subject">Message</label>
-            <textarea id="subject" name="subject" placeholder="Write something..." style="height:200px"></textarea>
-        </form>
-        <button class="form-bttn" onclick="sendMail()">Submit</button>
-        <script>
-            function sendMail()
-            {
-                var sub = encodeURIComponent("Knowledge Tree Consulting inquiry — " + document.getElementById("fname").value + " (" + document.getElementById("femail").value + ")");
-                var body = encodeURIComponent(document.getElementById("subject").value);
-                window.location.href = "mailto:george@oriolelandscaping.com?cc=peter@oriolelandscaping.com&subject=" + sub + "&body=" + body;
-            }
-</script>
+		<h3 style="margin-top: 0">Check Availability</h3>
+        <iframe style="opacity:0.85" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FToronto&amp;src=Z2VvcmdlLnUua3RjQGdtYWlsLmNvbQ&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=MDhpM2JhdWNsb2I1MjcwaGIwcTNtMGVtYnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4uY2FuYWRpYW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23039BE5&amp;color=%2333B679&amp;color=%23F4511E&amp;color=%230B8043" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
 </div>
 
